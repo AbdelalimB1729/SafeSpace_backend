@@ -9,9 +9,17 @@ import { initGridFS } from './config/gridfs.js';
 dotenv.config();
 const app = express();
 
+const allowedOrigins = [
+  process.env.CLIENT_URL,
+  'https://proud-smoke-03c159f0f.2.azurestaticapps.net',
+  'https://abdelalimsafe.space',
+  'https://www.abdelalimsafe.space' // Add this if you use www subdomain
+].filter(Boolean);
+
+
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'https://proud-smoke-03c159f0f.2.azurestaticapps.net'
+  origin: allowedOrigins
 }));
 app.use(express.json());
 
