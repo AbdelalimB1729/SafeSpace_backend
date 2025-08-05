@@ -11,8 +11,7 @@ const app = express();
 
 // Middleware
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'https://proud-smoke-03c159f0f.2.azurestaticapps.net',
-  credentials: true,
+  origin: process.env.CLIENT_URL || 'https://proud-smoke-03c159f0f.2.azurestaticapps.net'
 }));
 app.use(express.json());
 
